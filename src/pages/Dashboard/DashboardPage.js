@@ -2,6 +2,7 @@ import React from "react";
 import { useAuth } from "../../hooks/useAuth";
 import classes from "./DashboardPage.module.css";
 import { Link } from "react-router-dom";
+import NotFound from "../../components/NotFound/NotFound";
 
 export default function DashboardPage() {
   const { user } = useAuth();

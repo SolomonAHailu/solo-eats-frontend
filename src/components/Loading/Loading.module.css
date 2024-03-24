@@ -18,10 +18,10 @@
   }
   
   .container img {
-    border-bottom: 10px solid brown;
+    border-bottom: 10px solid #ff4d30;
   }
   
   .container h1 {
-    color: brown;
+    color: #ff4d30;
     text-transform: lowercase;
   }

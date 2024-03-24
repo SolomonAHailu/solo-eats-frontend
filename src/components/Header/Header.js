@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { useCart } from "../../hooks/useCart";
 import classes from "./header.module.css";
 import { useAuth } from "../../hooks/useAuth";
+import { FaRegCircleUser } from "react-icons/fa6";
+import { FaOpencart } from "react-icons/fa";
+import { FaCartShopping } from "react-icons/fa6";
 
 export default function Header() {
   const { user, logout } = useAuth();
@@ -13,17 +16,31 @@ export default function Header() {
     <header className={classes.header}>
       <div className={classes.container}>
         <Link to="/" className={classes.logo}>
-          Solo Eats
+          SoloEats
         </Link>
         <nav>
           <ul>
             {user ? (
               <li className={classes.menu_container}>
-                <Link to="/dashboard">{user.name}</Link>
+                {user.isAdmin ? (
+                  <Link to="/dashboard" className={classes.user}>
+                    <FaRegCircleUser size={25} />
+                  </Link>
+                ) : (
+                  <Link to="/profile" className={classes.user}>
+                    <FaRegCircleUser size={25} />
+                  </Link>
+                )}
                 <div className={classes.menu}>
-                  <Link to="/profile">Profile</Link>
-                  <Link to="/orders">Orders</Link>
-                  <a onClick={logout}>Logout</a>
+                  <Link to="/profile" className={classes.each}>
+                    Profile
+                  </Link>
+                  <Link to="/orders" className={classes.each}>
+                    Orders
+                  </Link>
+                  <a onClick={logout} className={classes.each}>
+                    Logout
+                  </a>
                 </div>
               </li>
             ) : (
@@ -32,7 +49,7 @@ export default function Header() {
 
             <li>
               <Link to="/cart">
-                Cart
+                <FaCartShopping size={25} />
                 {cart.totalCount > 0 && (
                   <span className={classes.cart_count}>{cart.totalCount}</span>
                 )}
@@ -41,6 +58,7 @@ export default function Header() {
           </ul>
         </nav>
       </div>
+      {/* <hr className={classes.hr} /> */}
     </header>
   );
 }

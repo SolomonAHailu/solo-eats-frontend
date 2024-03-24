@@ -3,6 +3,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin-bottom: 3rem;
   }
   
   .content {
@@ -35,7 +36,7 @@
   }
   
   .payment a {
-    background-color: #ff4d4d;
+    background-color: #ff4d30;
     color: white;
     padding: 0.8rem 5rem;
     border-radius: 1rem;

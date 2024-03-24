@@ -17,6 +17,7 @@ import FoodsAdminPage from "./pages/FoodsAdmin/FoodsAdminPage";
 import FoodEditPage from "./pages/FoodEdit/FoodEditPage";
 import UsersPage from "./pages/Users/UsersPage";
 import UserEditPage from "./pages/UserEdit/UserEditPage";
+import NotFoundPage from "./pages/NotFound/NotFoundPage";
 
 export default function AppRoutes() {
   return (
@@ -116,6 +117,7 @@ export default function AppRoutes() {
           </AdminRoute>
         }
       />
+      <Route path="/*" element={<NotFoundPage />} />
     </Routes>
   );
 }

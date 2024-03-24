@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { createOrder } from "../../services/orderService";
-import classes from "./Checkout.module.css";
+import classes from "./CheckoutPage.module.css";
 import Title from "../../components/Title/Title";
 import Input from "../../components/Input/Input";
 import Button from "../../components/Button/Button";

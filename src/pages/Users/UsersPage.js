@@ -5,6 +5,9 @@ import { getAll, toggleBlock } from "../../services/userService";
 import Title from "../../components/Title/Title";
 import { useAuth } from "../../hooks/useAuth";
 import Search from "../../components/Search/Search";
+import { FaEdit } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
+import { CgUnblock } from "react-icons/cg";
 
 export default function UsersPage() {
   const [users, setUsers] = useState();
@@ -55,10 +58,19 @@ export default function UsersPage() {
               <span>{user.address}</span>
               <span>{user.isAdmin ? "✅" : "❌"}</span>
               <span className={classes.actions}>
-                <Link to={"/admin/editUser/" + user.id}>Edit</Link>
+                <Link to={"/admin/editUser/" + user.id}>
+                  <FaEdit />
+                </Link>
                 {auth.user.id !== user.id && (
                   <Link onClick={() => handleToggleBlock(user.id)}>
-                    {user.isAdmin ? "" : user.isBlocked ? "Unblock" : "Block"}
+                    {/* {user.isAdmin ? "" : user.isBlocked ? "Unblock" : "Block"} */}
+                    {user.isAdmin ? (
+                      ""
+                    ) : user.isBlocked ? (
+                      <CgUnblock />
+                    ) : (
+                      <MdDelete />
+                    )}
                   </Link>
                 )}
               </span>

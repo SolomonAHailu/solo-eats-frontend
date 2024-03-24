@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import Loading from "./components/Loading/Loading";
 import { useLoading } from "./hooks/useLoading";
 import setLoadingInterceptor from "./interceptors/LoadingInterceptor";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const { showLoading, hideLoading } = useLoading();
@@ -16,6 +17,7 @@ function App() {
       <Loading />
       <Header />
       <AppRoutes />
+      <Footer />
     </>
   );
 }

@@ -1,8 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import classes from "./Tags.module.css";
 
 export default function Tags({ tags, forFoodPage }) {
+  const { tagName } = useParams();
+  console.log("tagname : " + tagName);
+
   return (
     <div
       className={classes.container}

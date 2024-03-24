@@ -6,7 +6,6 @@ import Title from "../../components/Title/Title";
 import DateTime from "../../components/DateTime/DateTime";
 import Price from "../../components/Price/Price";
 import NotFound from "../../components/NotFound/NotFound";
-// import NotFound from "../../components/NotFound/NotFound";
 
 const initialState = {};
 const reducer = (state, action) => {
@@ -43,14 +42,22 @@ export default function OrdersPage() {
       <Title title="Orders" margin="1.5rem 0 0 .2rem" fontSize="1.9rem" />
 
       {allStatus && (
-        <div className={classes.all_status}>
+        <div
+          className={classes.all_status}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            marginBottom: "5rem",
+            gap: "4px",
+          }}
+        >
           <Link to="/orders" className={!filter ? classes.selected : ""}>
             All
           </Link>
           {allStatus.map((state) => (
             <Link
               key={state}
-              className={state == filter ? classes.selected : ""}
+              className={state === filter ? classes.selected : ""}
               to={`/orders/${state}`}
             >
               {state}
@@ -59,7 +66,7 @@ export default function OrdersPage() {
         </div>
       )}
 
-      {orders?.length == 0 && (
+      {orders?.length === 0 && (
         <NotFound
           linkRoute={filter ? "/orders" : "/"}
           linkText={filter ? "Show All" : "Go To Home Page"}

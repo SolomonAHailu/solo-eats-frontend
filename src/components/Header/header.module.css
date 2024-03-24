@@ -1,27 +1,39 @@
-.header {
+ .header {
     background: white;
+
     padding: 0;
-    border-bottom: 1px solid #e72929;
   }
-  
+
+  .hr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    color: #999;
+    background-color: #f59f9f4d;
+    height: 1px;
+    margin: 0 20px;
+  }
+ 
   .header a {
-    color: #af1313;
+    color: #ff4d30;
   }
-  
+ 
   .header a:hover {
-    background: #e72929;
-    color: white;
+    opacity: 2;
     cursor: pointer;
   }
-  
+
   .container {
-    margin: 0 auto;
+    margin: 0 10px;
+
     display: flex;
     justify-content: space-between;
   }
-  
+    
   .logo {
     font-weight: bold;
+    font-size: 2rem;
     padding: 1rem;
   }
   
@@ -39,27 +51,37 @@
   .menu_container {
     position: relative;
   }
-  
+
   .menu {
     position: absolute;
     z-index: 1001;
     background-color: whitesmoke;
     display: none;
+    border-radius: 30px;
+  }
+
+  .menu a:hover {
+    /* background: #e72929; */
+    background: #ff4d30;
+    color: white;
   }
   
+  .each{
+    border-radius: 30px;
+  }
+
   .menu_container:hover .menu {
     display: block;
   }
   
   .menu a {
     width: 100%;
-    min-width: 8rem;
   }
   
   .cart_count {
-    background-color: #ff4d4d;
+    background-color: #656467;
     color: white;
     padding: 0.1rem 0.45rem;
     border-radius: 100rem;
     font-size: 0.9rem;
-  }
+  }   

@@ -1,6 +1,7 @@
 .container {
     display: flex;
     flex-wrap: wrap;
+    margin: 3rem 0;
   }
   
   .container a {
@@ -10,4 +11,9 @@
     border-radius: 10rem;
     font-weight: 600;
     color: blue;
+    transition: ease-in-out 0.2s;
+  }
+
+  .container a:hover {
+    color: #ff4d30;
   }

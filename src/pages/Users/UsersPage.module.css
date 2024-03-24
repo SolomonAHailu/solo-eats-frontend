@@ -1,13 +1,18 @@
 .container {
     display: flex;
     justify-content: center;
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
+    margin-bottom: 3rem;
     font-size: 1.2rem;
+    /* margin: 3rem 0; */
   }
   
   .list {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     max-width: 50rem;
+    gap: 2rem;
   }
   
   .list_item {
@@ -15,7 +20,8 @@
     grid-template-columns: 20% 35% 20% 10% 15%;
     gap: 1%;
     align-items: center;
-    border-bottom: 1px solid whitesmoke;
+    /* border-bottom: 1px solid whitesmoke; */
+    border-bottom: 1px solid #ff4c304f;
     min-height: 3rem;
   }
   
