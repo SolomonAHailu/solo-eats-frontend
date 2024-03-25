@@ -39,7 +39,7 @@ export default function Header() {
                   <Link to="/orders" className={classes.each}>
                     Orders
                   </Link>
-                  <a onClick={logout} className={classes.each}>
+                  <a onClick={logout} className={classes.each} href="logout">
                     Logout
                   </a>
                 </div>
