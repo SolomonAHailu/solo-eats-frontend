@@ -3,8 +3,16 @@ import classes from "./Thumbnails.module.css";
 import { Link } from "react-router-dom";
 import StarRating from "../StarRating/StarRating";
 import Price from "../Price/Price";
+import { GoHeartFill } from "react-icons/go";
+import { GoHeart } from "react-icons/go";
+import { FcAlarmClock } from "react-icons/fc";
 
 export default function Thumbnails({ foods }) {
+  const isFavorite = (foodId) => {
+    const favoriteStatus = localStorage.getItem(`isFavorite_${foodId}`);
+    return favoriteStatus === "true";
+  };
+
   return (
     <ul className={classes.list}>
       {foods.map((food) => (
@@ -15,16 +23,12 @@ export default function Thumbnails({ foods }) {
               src={`${food.imageUrl}`}
               alt={food.name}
             />
-
             <div className={classes.content}>
               <div className={classes.name}>{food.name}</div>
-              <span
-                className={`${classes.favorite} ${
-                  food.favorite ? "" : classes.not
-                }`}
-              >
-                ❤
+              <span className={classes.favorite}>
+                {isFavorite(food.id) ? <GoHeartFill /> : <GoHeart />}
               </span>
+
               <div className={classes.stars}>
                 <StarRating stars={food.stars} />
               </div>
@@ -35,7 +39,9 @@ export default function Thumbnails({ foods }) {
                   ))}
                 </div>
                 <div className={classes.cook_time}>
-                  <span>⏰</span>
+                  <span>
+                    <FcAlarmClock size={20} />
+                  </span>
 
                   {food.cookTime}
                 </div>

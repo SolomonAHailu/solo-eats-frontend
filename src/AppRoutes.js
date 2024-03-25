@@ -18,6 +18,7 @@ import FoodEditPage from "./pages/FoodEdit/FoodEditPage";
 import UsersPage from "./pages/Users/UsersPage";
 import UserEditPage from "./pages/UserEdit/UserEditPage";
 import NotFoundPage from "./pages/NotFound/NotFoundPage";
+import FavoritesPage from "./pages/Favorites/FavoritesPage";
 
 export default function AppRoutes() {
   return (
@@ -27,6 +28,7 @@ export default function AppRoutes() {
       <Route path="/tag/:tag" element={<HomePage />} />
       <Route path="/food/:id" element={<FoodPage />} />
       <Route path="/cart" element={<CartPage />} />
+      <Route path="/favorites" element={<FavoritesPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route

@@ -7,6 +7,8 @@ import Title from "../../components/Title/Title";
 import Search from "../../components/Search/Search";
 import Price from "../../components/Price/Price";
 import { toast } from "react-toastify";
+import { FaEdit } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
 
 export default function FoodsAdminPage() {
   const [foods, setFoods] = useState([]);
@@ -56,12 +58,19 @@ export default function FoodsAdminPage() {
         {foods &&
           foods.map((food) => (
             <div key={food.id} className={classes.list_item}>
-              <img src={food.imageUrl} alt={food.name} />
+              {/* <img src={food.imageUrl} alt={food.name} /> */}
+              <Link to={"/food/" + food.id}>
+                <img src={food.imageUrl} alt={food.name} />
+              </Link>
               <Link to={"/food/" + food.id}>{food.name}</Link>
               <Price price={food.price} />
               <div className={classes.actions}>
-                <Link to={"/admin/editFood/" + food.id}>Edit</Link>
-                <Link onClick={() => deleteFood(food)}>Delete</Link>
+                <Link to={"/admin/editFood/" + food.id}>
+                  <FaEdit size={25} />
+                </Link>
+                <Link onClick={() => deleteFood(food)}>
+                  <MdDelete size={25} color="#ff4d30" />
+                </Link>
               </div>
             </div>
           ))}

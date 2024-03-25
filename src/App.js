@@ -16,7 +16,9 @@ function App() {
     <>
       <Loading />
       <Header />
-      <AppRoutes />
+      <div style={{ minHeight: "100vh" }}>
+        <AppRoutes />
+      </div>
       <Footer />
     </>
   );

@@ -1,5 +1,3 @@
-// NotFoundPage.js
-
 import React from "react";
 import classes from "./NotFoundPage.module.css";
 import Lottie from "lottie-react";

@@ -61,7 +61,6 @@
   }
 
   .menu a:hover {
-    /* background: #e72929; */
     background: #ff4d30;
     color: white;
   }
@@ -78,10 +77,37 @@
     width: 100%;
   }
   
+  .parent{
+    position: relative;
+  }
+
   .cart_count {
-    background-color: #656467;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    /* background-color: #a9a9aa; */
+    background-color: #ff4d30;
     color: white;
-    padding: 0.1rem 0.45rem;
-    border-radius: 100rem;
-    font-size: 0.9rem;
+    /* padding: 0.1rem 0.45rem; */
+    border-radius: 50%;
+    font-size: 0.6rem;
+    font-weight: bolder;
+    top: 14px;
+    right: 8px;
+    position: absolute;
   }   
+
+  .favorite_count {
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    /* background-color: #a9a9aa; */
+    background-color: #ff4d30;
+    color: white;
+    border-radius: 50%;
+    font-size: 0.6rem;
+    font-weight: bolder;
+    top: 14px;
+    left: 38px;
+    position: absolute;
+  }    

@@ -9,12 +9,16 @@ export const uploadImage = async (event) => {
 
   const formData = new FormData();
   formData.append("image", image, image.name);
-  const response = await axios.post("api/upload", formData, {
-    onUploadProgress: ({ progress }) => {
-      if (toastId) toast.update(toastId, { progress });
-      else toastId = toast.success("Uploading...", { progress });
-    },
-  });
+  const response = await axios.post(
+    "https://solo-eats-backend.onrender.com/api/upload",
+    formData,
+    {
+      onUploadProgress: ({ progress }) => {
+        if (toastId) toast.update(toastId, { progress });
+        else toastId = toast.success("Uploading...", { progress });
+      },
+    }
+  );
   toast.dismiss(toastId);
   return response.data.imageUrl;
 };

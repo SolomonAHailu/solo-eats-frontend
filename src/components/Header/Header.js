@@ -4,13 +4,15 @@ import { useCart } from "../../hooks/useCart";
 import classes from "./header.module.css";
 import { useAuth } from "../../hooks/useAuth";
 import { FaRegCircleUser } from "react-icons/fa6";
-import { FaOpencart } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
+import { FaRegHeart } from "react-icons/fa";
+import { useFavorite } from "../../hooks/useFavorite";
+import { FiShoppingCart } from "react-icons/fi";
 
 export default function Header() {
   const { user, logout } = useAuth();
-
   const { cart } = useCart();
+  const { favorite } = useFavorite();
 
   return (
     <header className={classes.header}>
@@ -47,9 +49,17 @@ export default function Header() {
               <Link to="/login">Login</Link>
             )}
 
-            <li>
+            <li className={classes.parent}>
+              <Link to="/favorites">
+                <FaRegHeart size={25} />
+                {favorite.totalCount > 0 && (
+                  <span className={classes.favorite_count}>
+                    {favorite.totalCount}
+                  </span>
+                )}
+              </Link>
               <Link to="/cart">
-                <FaCartShopping size={25} />
+                <FiShoppingCart size={25} />
                 {cart.totalCount > 0 && (
                   <span className={classes.cart_count}>{cart.totalCount}</span>
                 )}
@@ -58,7 +68,6 @@ export default function Header() {
           </ul>
         </nav>
       </div>
-      {/* <hr className={classes.hr} /> */}
     </header>
   );
 }

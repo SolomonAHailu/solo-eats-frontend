@@ -39,10 +39,6 @@
   font-size: 1.2rem;
 }
 
-.favorite.not {
-  color: grey;
-}
-
 .stars {
   margin: 0.5rem 0;
 }
@@ -72,6 +68,10 @@
   font-size: 0.9rem;
   flex: 3;
   text-align: right;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* background-color: #ff4d30; */
 }
 
 .price {
