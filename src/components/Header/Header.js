@@ -4,7 +4,6 @@ import { useCart } from "../../hooks/useCart";
 import classes from "./header.module.css";
 import { useAuth } from "../../hooks/useAuth";
 import { FaRegCircleUser } from "react-icons/fa6";
-import { FaCartShopping } from "react-icons/fa6";
 import { FaRegHeart } from "react-icons/fa";
 import { useFavorite } from "../../hooks/useFavorite";
 import { FiShoppingCart } from "react-icons/fi";

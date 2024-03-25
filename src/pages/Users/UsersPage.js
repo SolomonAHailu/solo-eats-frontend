@@ -63,7 +63,6 @@ export default function UsersPage() {
                 </Link>
                 {auth.user.id !== user.id && (
                   <Link onClick={() => handleToggleBlock(user.id)}>
-                    {/* {user.isAdmin ? "" : user.isBlocked ? "Unblock" : "Block"} */}
                     {user.isAdmin ? (
                       ""
                     ) : user.isBlocked ? (
