@@ -28,7 +28,6 @@ export default function AppRoutes() {
       <Route path="/tag/:tag" element={<HomePage />} />
       <Route path="/food/:id" element={<FoodPage />} />
       <Route path="/cart" element={<CartPage />} />
-      <Route path="/favorites" element={<FavoritesPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route
@@ -68,6 +67,14 @@ export default function AppRoutes() {
         element={
           <AuthRoute>
             <OrdersPage />
+          </AuthRoute>
+        }
+      />
+      <Route
+        path="/favorites"
+        element={
+          <AuthRoute>
+            <FavoritesPage />
           </AuthRoute>
         }
       />

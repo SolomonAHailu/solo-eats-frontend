@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../../hooks/useCart";
 import classes from "./header.module.css";
 import { useAuth } from "../../hooks/useAuth";
@@ -12,6 +12,13 @@ export default function Header() {
   const { user, logout } = useAuth();
   const { cart } = useCart();
   const { favorite } = useFavorite();
+
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    navigate("/");
+    logout();
+  };
 
   return (
     <header className={classes.header}>
@@ -39,7 +46,7 @@ export default function Header() {
                   <Link to="/orders" className={classes.each}>
                     Orders
                   </Link>
-                  <a onClick={logout} className={classes.each} href="logout">
+                  <a onClick={handleLogout} className={classes.each}>
                     Logout
                   </a>
                 </div>
